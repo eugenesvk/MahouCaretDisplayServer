@@ -3,29 +3,6 @@
 		"id": "preferences",
 	    "children":
 	    [
-			{
-				"id": "preferences",
-				"caption" : "Mahou Caret Display Server",
-				"children":
-				[
-					{
-					    "id" : "toggleMCDServer",
-					    "caption" : "Toggle Server",
-					    "command" : "toggle_mcd_server"
-					},
-					{
-					    "id" : "toggleDebugMode",
-					    "caption" : "Toggle Debug Mode",
-					    "command" : "toggle_debug_mode"
-					}
-				]
-			}
-	    ]
-	},
-	{
-	    "id": "preferences",
-	    "children":
-	    [
 	    	{
 	    		"caption": "Package Settings",
 				"id": "package-settings",
@@ -36,6 +13,19 @@
 						"id": "MCDS_Settigns",
 						"children":
 						[
+							{
+							    "id" : "toggleMCDServer",
+							    "caption" : "Toggle Server",
+							    "command" : "toggle_mcd_server"
+							},
+							{
+							    "id" : "toggleDebugMode",
+							    "caption" : "Toggle Debug Mode",
+							    "command" : "toggle_debug_mode"
+							},
+							{
+								"caption": "-"
+							},
 							{
 								"caption": "Settings – Default",
 								"command": "open_file", "args":
