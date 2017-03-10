@@ -1,0 +1,8 @@
+{
+	// Enables Mahou Caret Display Server.
+	"server_enabled": true,
+	// Displays info in sublime console.
+	"debug_mode": false,
+	// Delay for actions like CTRL+[HOME/END], [show/hide] sidebar, etc..
+	"special_delay": 0.3
+}

@@ -1,0 +1,78 @@
+[
+	{
+		"id": "preferences",
+	    "children":
+	    [
+			{
+				"id": "preferences",
+				"caption" : "Mahou Caret Display Server",
+				"children":
+				[
+					{
+					    "id" : "toggleMCDServer",
+					    "caption" : "Toggle Server",
+					    "command" : "toggle_mcd_server"
+					},
+					{
+					    "id" : "toggleDebugMode",
+					    "caption" : "Toggle Debug Mode",
+					    "command" : "toggle_debug_mode"
+					}
+				]
+			}
+	    ]
+	},
+	{
+	    "id": "preferences",
+	    "children":
+	    [
+	    	{
+	    		"caption": "Package Settings",
+				"id": "package-settings",
+				"children":
+				[
+					{
+						"caption": "Mahou Caret Display Server",
+						"id": "MCDS_Settigns",
+						"children":
+						[
+							{
+								"caption": "Settings – Default",
+								"command": "open_file", "args":
+								{
+									"file": "${packages}/MahouCaretDisplayServer/MahouCaretDisplayServer.sublime-settings"
+								}
+							},
+							{
+								"caption": "Settings – User",
+								"command": "open_file", "args":
+								{
+									"file": "${packages}/User/MahouCaretDisplayServer.sublime-settings"
+								}
+							},
+							{
+								"caption": "-"
+							},
+							{
+						    "caption": "Key Bindings – Default",
+						    "command": "open_file", "args":
+							    {
+							        "file": "${packages}/MahouCaretDisplayServer/Default (Windows).sublime-keymap",
+							        "platform": "Windows"
+							    }
+							},
+							{
+						    "caption": "Key Bindings – User",
+						    "command": "open_file", "args":
+							    {
+							        "file": "${packages}/User/Default (Windows).sublime-keymap",
+							        "platform": "Windows"
+							    }
+							}
+						]
+					}
+				]
+	    	}
+	    ]
+	}
+]
