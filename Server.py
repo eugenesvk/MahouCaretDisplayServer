@@ -78,6 +78,9 @@ def UpdateServer(self, view=None, window=None, name=None, args=None):
       time.sleep(Settings.get("special_delay"))
     vid   	= view.id()
     topRow	= view.rowcol(view.visible_region().a)[0]
+    sel   	= view.sel()
+    if not sel: # fix a threading Exception on new windows
+      return
     caret_pos = view.rowcol(view.sel()[0].begin())
     sdbWidth  = abs(view.window_to_layout(view.viewport_position())[0]) - 48
     tabs = view.substr(view.line(view.sel()[0])).count('\t')
