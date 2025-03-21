@@ -85,9 +85,12 @@ def UpdateServer(self, view=None, window=None, name=None, args=None):
     sdbWidth  = abs(view.window_to_layout(view.viewport_position())[0]) - 48
     tabs = view.substr(view.line(view.sel()[0])).count('\t')
     # print(window.panels())
-    if window is not None:
-      if window.active_panel() == 'console':
-        vid = 4
+    is_console = False
+    if   window is not None:
+      if window.active_panel() == 'console' and view.element() == 'console:input':
+        is_console = True
+    if is_console:
+      vid = 4
     if (view.id() == 4):
       sdbWidth += view.em_width()
     sock.listen(1)
