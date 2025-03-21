@@ -19,25 +19,25 @@ Settings = sublime.Settings
 class SublimeTextEventsListener(sublime_plugin.EventListener):
   def on_window_command(self, window, name, args):
     global UseDelay
-    if Settings.get('debug_mode'):
-      print(f"Mahou on_window_command = {name}")
+    # if Settings.get('debug_mode'):
+    #   print(f"Mahou on_window_command = {name}")
     if (name == 'toggle_side_bar'):
       UseDelay = True
     StartSockThread((self, None, window, name, args))
   def on_text_command(self, window, name, args):
     global UseDelay
-    if Settings.get('debug_mode'):
-      print(f"Mahou on_text_command = {name}")
+    # if Settings.get('debug_mode'):
+    #   print(f"Mahou on_text_command = {name}")
     if (name == 'move_to'):
       UseDelay = True
     StartSockThread((self, None, window, name, args))
   def on_activated(self, view):
-    if Settings.get('debug_mode'):
-      print(f"Mahou on_activated view.id = {view.id()}")
+    # if Settings.get('debug_mode'):
+    #   print(f"Mahou on_activated view.id = {view.id()}")
     StartSockThread((self, view))
   def on_modified(self, view):
-    if Settings.get('debug_mode'):
-      print(f"Mahou on_modified view.id = {view.id()}")
+    # if Settings.get('debug_mode'):
+    #   print(f"Mahou on_modified view.id = {view.id()}")
     StartSockThread((self, view))
 
 def plugin_loaded(): # After plugin loaded
