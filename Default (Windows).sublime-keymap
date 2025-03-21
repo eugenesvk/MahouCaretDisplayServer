@@ -1,10 +1,4 @@
 [
-	{ 
-		"keys": ["super+alt+shift+m"],
-		"command": "toggle_mcd_server"
-	},
-	{
-		"keys": ["super+alt+shift+d"],
-		"command": "toggle_debug_mode"
-	}
+{"keys":["super+alt+shift+m"],"command": "toggle_mcd_server"},
+{"keys":["super+alt+shift+d"],"command": "toggle_debug_mode"}
 ]
