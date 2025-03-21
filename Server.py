@@ -84,6 +84,10 @@ def UpdateServer(self, view=None, window=None, name=None, args=None):
     caret_pos = view.rowcol(view.sel()[0].begin())
     sdbWidth  = abs(view.window_to_layout(view.viewport_position())[0]) - 48
     tabs = view.substr(view.line(view.sel()[0])).count('\t')
+    # tstwin = view.text_to_window(0)
+    # tstwin1 = view.text_to_window(2)
+    # tstlyt = view.text_to_layout(0)
+    # print(f"win={tstwin[0]} win1={tstwin1[0]} lyt={tstlyt[0]} sdbWidth={sdbWidth}")
     # print(window.panels())
     is_console = False
     if   window is not None:
