@@ -113,5 +113,5 @@ def UpdateServer(self, view=None, window=None, name=None, args=None):
       "VID->"	+ str(vid)                      	+'|'+
       "SBW->"	+ str(sdbWidth), 'utf-8')
     conn.send(data)
-    if Settings.get('debug_mode'):
-      print('✓ Sent')
+    # if Settings.get('debug_mode'):
+      # print('✓ Sent')
