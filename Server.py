@@ -93,20 +93,21 @@ def UpdateServer(self, view=None, window=None, name=None, args=None):
     sock.listen(1)
     conn, addr = sock.accept()
     if Settings.get('debug_mode'):
-      print(f"\t\tConnected to:{addr} sending data... Updating server with values:" +'\n'+
-        "\t"+"Line"             	+':'+ str(caret_pos[0] - topRow)    	+'|'+
-        "\t"+"Caret on Char"    	+':'+ str(caret_pos[1] + (tabs * 3))	+'|'+
-        "\t"+"Line Height(Font)"	+':'+ str(view.line_height())       	+'|'+
-        "\t"+"Char Width"       	+':'+ str(view.em_width())          	+'|'+
-        "\t"+"View ID"          	+':'+ str(view.id())                	+'|'+
-        "\t"+"Sidebar Width"    	+':'+ str(sdbWidth)                 	+
-        "\t"+"Tabs in line"     	+':'+ str(tabs))
-    data = bytes("L->"          	    + str(caret_pos[0] - topRow)    	+'|'+
-      "C->"                     	    + str(caret_pos[1] + (tabs * 3))	+'|'+
-      "LH->"                    	    + str(view.line_height())       	+'|'+
-      "CW->"                    	    + str(view.em_width())          	+'|'+
-      "VID->"                   	    + str(vid)                      	+'|'+
-      "SBW->"                   	    + str(sdbWidth), 'utf-8')
+      print(f"🔗{addr}"+
+        f" L#{ caret_pos[0] - topRow}"    	+
+        f" Ch#{caret_pos[1] + (tabs * 2)}"	+
+        f" L↕{ view.line_height()}"       	+
+        f" Ch↔{view.em_width()}"          	+
+        f" Vw#{view.id()}"                	+
+        f" Sidebar↔{sdbWidth}"            	+
+        f" (⁁{caret_pos[1]} ⭾{tabs} R↑{topRow})")
+    data = bytes(""+
+      "L->"  	+ str(caret_pos[0] - topRow)    	+'|'+
+      "C->"  	+ str(caret_pos[1] + (tabs * 2))	+'|'+
+      "LH->" 	+ str(view.line_height())       	+'|'+
+      "CW->" 	+ str(view.em_width())          	+'|'+
+      "VID->"	+ str(vid)                      	+'|'+
+      "SBW->"	+ str(sdbWidth), 'utf-8')
     conn.send(data)
     if Settings.get('debug_mode'):
-      print('\t\tSend ok.')
+      print('✓ Sent')
