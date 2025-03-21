@@ -95,6 +95,7 @@ def UpdateServer(self, view=None, window=None, name=None, args=None):
       sdbWidth += view.em_width()
     sock.listen(1)
     conn, addr = sock.accept()
+    # todo: tab logic is wrong, it's not a fixed multiple, can have different width
     if Settings.get('debug_mode'):
       print(f"🔗{addr}"+
         f" L#{ caret_pos[0] - topRow}"    	+
