@@ -93,6 +93,8 @@ def UpdateServer(self, view=None, window=None, name=None, args=None):
     if   window is not None:
       if window.active_panel() == 'console' and view.element() == 'console:input':
         is_console = True
+    #  todo: when typing in console, sometimes bugs and displays at the top, not bottom.
+    #  todo: why 4?
     if is_console:
       vid = 4
     if (view.id() == 4):
